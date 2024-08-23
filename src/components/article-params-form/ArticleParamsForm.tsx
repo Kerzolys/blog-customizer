@@ -11,14 +11,11 @@ import { Separator } from '../separator';
 import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
 
 export type TArticleParamsForm = {
-	onSubmit: (options: ArticleStateType) => void
-	onReset: () => void
-	onClose?: () => void
-	onChange?: () => void
+	setOptions: (options: ArticleStateType) => void
 }
 
 export const ArticleParamsForm = (props: TArticleParamsForm) => {
-	const { onSubmit, onReset, onClose, onChange } = props
+	const { setOptions } = props
 
 	const [formState, setFormState] = useState(defaultArticleState)
 	const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -38,18 +35,17 @@ export const ArticleParamsForm = (props: TArticleParamsForm) => {
 
 	const handleSubmit = (evt: React.FormEvent) => {
 		evt.preventDefault()
-		onSubmit(formState)
+		setOptions(formState)
 	}
 
 	const handleReset = () => {
-		onReset()
 		setFormState(defaultArticleState)
+		setOptions(defaultArticleState)
 	}
 
 	useOutsideClickClose({
 		isOpen,
 		rootRef,
-		onClose,
 		onChange: setIsOpen
 	})
 
