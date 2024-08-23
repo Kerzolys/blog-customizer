@@ -3,6 +3,9 @@
 	box-sizing: border-box;
 	max-width: fit-content;
 	border: 1px solid #000000;
+	margin-block-end: 50px;
+	margin-block-end: 9.04%;
+
 }
 
 .item {
@@ -40,7 +43,7 @@
 
 .label:hover,
 .item[data-checked='true'] .label:hover {
-	background: var(--gold, #ffc802);
+	background: var(--gold, #FFEDAB);
 }
 
 .item[data-checked='true'] .label {

@@ -6,6 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 4px;
+	margin-block-end: 9.04%;
 }
 
 .arrow {
@@ -24,14 +25,19 @@
 	width: 100%;
 	height: 50px;
 	padding: 15px 17px;
-	background: rgb(255 255 255);
 	outline: 1px solid #000000;
+	background: rgb(255 255 255);
 	cursor: pointer;
 }
 
 .placeholder[data-selected='true'] {
 	color: rgb(0 0 0);
 }
+
+// .placeholder:hover {
+// 	border: #FFC802 1px solid;
+// 	outline: none;
+// }
 
 .selectWrapper[data-is-active='true'] .arrow {
 	margin-top: -14px;
@@ -44,7 +50,7 @@
 
 .selectWrapper:not([data-is-active='true'])
 	.placeholder:not([data-status='invalid']):hover {
-	outline: 3px solid #000000;
+	outline: 1px solid #FFC802;
 }
 
 .select {
@@ -54,11 +60,11 @@
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0;
+	border-top: none;
 	padding: 0;
+	outline: 3px solid #000000;
 	list-style: none;
 	background-color: rgb(255 255 255 / 100%);
-	border-top: none;
-	outline: 3px solid #000000;
 }
 
 .option {
@@ -66,10 +72,10 @@
 	justify-content: flex-start;
 	align-items: center;
 	height: 30px;
+	border: 1px;
 	padding: 5px;
 	padding: 15px 17px;
 	background-color: rgb(255 255 255 / 100%);
-	border: 1px;
 	cursor: pointer;
 }
 
@@ -78,7 +84,11 @@
 }
 
 .option:hover {
-	background: var(--grey, #c4c4c4);
+	background: #EEEEEE;
+}
+
+.option:active {
+	background: #D7D7D7;
 }
 
 @mixin option-color-before {
@@ -89,8 +99,8 @@
 }
 
 .option-black::before {
-	@include option-color-before;
 	background-color: #000000;
+	@include option-color-before;
 }
 
 @mixin option-color-after {
@@ -103,90 +113,90 @@
 }
 
 .option-black[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-white::before {
-	@include option-color-before;
 	box-sizing: border-box;
-	background-color: #ffffff;
 	border: 1px solid #000000;
+	background-color: #ffffff;
+	@include option-color-before;
 }
 
 .option-white[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #000000;
+	@include option-color-after;
 }
 
 .option-gray::before {
-	@include option-color-before;
 	background-color: #c4c4c4;
+	@include option-color-before;
 }
 
 .option-gray[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-pink::before {
-	@include option-color-before;
 	background-color: #feafe8;
+	@include option-color-before;
 }
 
 .option-pink[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-fuchsia::before {
-	@include option-color-before;
 	background-color: #fd24af;
+	@include option-color-before;
 }
 
 .option-fuchsia[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-yellow::before {
-	@include option-color-before;
 	background-color: #ffc802;
+	@include option-color-before;
 }
 
 .option-yellow[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-green::before {
-	@include option-color-before;
 	background-color: #80d994;
+	@include option-color-before;
 }
 
 .option-green[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-blue::before {
-	@include option-color-before;
 	background-color: #6fc1fd;
+	@include option-color-before;
 }
 
 .option-blue[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 .option-purple::before {
-	@include option-color-before;
 	background-color: #5f0dee;
+	@include option-color-before;
 }
 
 .option-purple[data-selected='true']::after {
-	@include option-color-after;
 	background-color: #ffffff;
+	@include option-color-after;
 }
 
 @mixin option-width-before {
@@ -197,11 +207,11 @@
 }
 
 .option-wide::before {
-	@include option-width-before;
 	background-image: url('./../../images/wide.svg');
+	@include option-width-before;
 }
 
 .option-narrow::before {
-	@include option-width-before;
 	background-image: url('./../../images/narrow.svg');
+	@include option-width-before;
 }
